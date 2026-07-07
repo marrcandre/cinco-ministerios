@@ -1,125 +1,133 @@
-Estamos fazendo ajustes finais do Sprint 6.3 antes da release v1.0.0.
+# Próximo Sprint — Sprint 6.4: Revisão Final e Release (v1.0.0)
 
-Objetivo:
-Refinar a apresentação institucional sem alterar arquitetura ou regras de negócio.
+## Objetivo
 
-IMPORTANTE:
-- Não criar novas funcionalidades.
-- Não alterar fluxo do teste.
-- Manter Design System existente.
+Realizar a revisão final da aplicação **Cinco Ministérios** antes da publicação oficial da primeira versão estável.
 
-## 1. Remover logo da Home
+Este sprint tem como objetivo garantir que a aplicação esteja pronta para divulgação pública, validando aspectos técnicos, visuais e documentais.
+
+Não serão realizadas alterações em regras de negócio ou arquitetura.
+
+---
+
+# Escopo
+
+## 1. Auditoria final da aplicação
+
+Revisar:
+
+* funcionamento completo do fluxo:
+
+  * página inicial;
+  * teste;
+  * resultado;
+  * página institucional.
+
+* navegação entre páginas;
+
+* links internos;
+
+* links externos;
+
+* comportamento em desktop e dispositivos móveis;
+
+* modo claro e escuro.
+
+---
+
+## 2. Revisão de publicação
+
+Validar:
+
+* favicon;
+* logo;
+* apple-touch-icon;
+* imagem Open Graph;
+* compartilhamento em redes sociais;
+* manifest PWA;
+* robots.txt;
+* sitemap.xml.
+
+Conferir se todas as URLs provisórias estão corretas.
+
+---
+
+## 3. Documentação final
 
 Atualizar:
 
-src/views/HomeView.vue
-
-Remover o AppLogo adicionado no hero.
-
-Motivo:
-A Home deve priorizar:
-- apresentação do teste;
-- chamada principal;
-- início da experiência.
-
-Manter o logo:
-- Header;
-- Página Sobre.
-
----
-
-## 2. Completar projetos relacionados
-
-Atualizar:
-
-src/views/AboutView.vue
-
-Na seção de projetos adicionar:
-
-### Cinco Ministérios
-
-Descrição:
-Ferramenta de reflexão baseada em Efésios 4:11 para descoberta de perfil ministerial.
-
-Links:
-- Aplicação:
-https://cinco-ministerios.vercel.app/
-- Código fonte:
-https://github.com/marrcandre/cinco-ministerios
-
-### Dons Espirituais
-
-Descrição:
-Ferramenta de reflexão sobre dons espirituais.
-
-Links:
-- Aplicação:
-https://dons-espirituais.vercel.app
-- Código fonte:
-https://github.com/marrcandre/dons-espirituais
-
-Utilizar componentes de link existentes ou padrão visual da aplicação.
-
----
-
-## 3. Tornar contatos clicáveis
-
-Na seção Autor:
-
-Transformar em links:
-
-GitHub:
-https://github.com/marrcandre
-
-LinkedIn:
-https://www.linkedin.com/in/marrcandre/
-
-Email:
-mailto:marcoandre@gmail.com
-
-Para links externos:
-- target="_blank"
-- rel="noopener noreferrer"
-
----
-
-## 4. Revisar visual
+* README.md;
+* CHANGELOG.md;
+* documentação do Sprint 6.
 
 Verificar:
 
-- Sobre;
-- Footer;
-- Header;
-- Home.
-
-Garantir:
-- sem elementos sobrando;
-- espaçamento consistente;
-- links com aparência adequada.
+* descrição do projeto;
+* tecnologias utilizadas;
+* instruções de execução;
+* links públicos;
+* informações de autoria.
 
 ---
 
-## 5. Documentação
-
-Atualizar:
-
-docs/sprint-6-publicacao.md
-
-Registrar esses ajustes finais do Sprint 6.3.
-
----
-
-## 6. Validação
+## 4. Validação técnica
 
 Executar:
 
+```bash
 npm run lint
 npm run typecheck
 npm run test
 npm run build
+```
 
-Apresentar:
-- resumo;
-- arquivos alterados;
-- testes;
-- commit sugerido.
+Confirmar:
+
+* ausência de erros;
+* todos os testes passando;
+* build de produção funcionando.
+
+---
+
+## 5. Preparação da versão 1.0.0
+
+Após aprovação final:
+
+Criar tag:
+
+```bash
+v1.0.0
+```
+
+Criar release correspondente no GitHub.
+
+Registrar:
+
+* resumo das funcionalidades;
+* decisões importantes;
+* data da primeira publicação oficial.
+
+---
+
+# Fora do escopo
+
+Não serão implementados neste sprint:
+
+* autenticação;
+* banco de dados de usuários;
+* histórico de resultados;
+* novos testes;
+* integração com outros projetos;
+* mudanças na metodologia do teste.
+
+---
+
+# Critério de conclusão
+
+O Sprint 6.4 será considerado concluído quando:
+
+* aplicação revisada;
+* documentação atualizada;
+* testes aprovados;
+* versão marcada como `v1.0.0`;
+* release publicada no GitHub.
