@@ -1,16 +1,24 @@
 <script setup lang="ts">
-import type { MinistryScore } from '@/domain/types'
+import type { Ministry, MinistryScore } from '@/domain/types'
 import { MINISTRIES } from '@/domain/ministries'
+import { getTopMinistries } from '@/domain/scoring'
 
 interface Props {
   scores: MinistryScore[]
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const topMinistries = getTopMinistries(props.scores)
+const topIds = new Set(topMinistries.map((s) => s.ministry))
 
 function getMinistryName(ministry: string): string {
   const m = MINISTRIES.find((m) => m.id === ministry)
   return m?.name ?? ministry
+}
+
+function isTop(ministry: Ministry): boolean {
+  return topIds.has(ministry)
 }
 </script>
 
@@ -20,7 +28,7 @@ function getMinistryName(ministry: string): string {
       v-for="(score, index) in scores"
       :key="score.ministry"
       class="result-ranking__item"
-      :class="{ 'result-ranking__item--top': index === 0 }"
+      :class="{ 'result-ranking__item--top': isTop(score.ministry) }"
     >
       <div class="result-ranking__position">
         {{ index + 1 }}º

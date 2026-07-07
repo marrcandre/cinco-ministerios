@@ -46,12 +46,49 @@ describe('ResultRanking', () => {
     expect(scoreEls[4].text()).toBe('2 pontos')
   })
 
-  it('should highlight the first item', () => {
+  it('should highlight only the first item when there is a clear winner', () => {
     const wrapper = mount(ResultRanking, {
       props: { scores },
     })
     const items = wrapper.findAll('.result-ranking__item')
     expect(items[0].classes()).toContain('result-ranking__item--top')
     expect(items[1].classes()).not.toContain('result-ranking__item--top')
+    expect(items[2].classes()).not.toContain('result-ranking__item--top')
+    expect(items[3].classes()).not.toContain('result-ranking__item--top')
+    expect(items[4].classes()).not.toContain('result-ranking__item--top')
+  })
+
+  it('should highlight two items on a two-way tie', () => {
+    const tied: MinistryScore[] = [
+      { ministry: 'pastor', score: 3 },
+      { ministry: 'mestre', score: 3 },
+      { ministry: 'evangelista', score: 2 },
+      { ministry: 'profeta', score: 2 },
+      { ministry: 'apostolo', score: 2 },
+    ]
+    const wrapper = mount(ResultRanking, {
+      props: { scores: tied },
+    })
+    const items = wrapper.findAll('.result-ranking__item')
+    expect(items[0].classes()).toContain('result-ranking__item--top')
+    expect(items[1].classes()).toContain('result-ranking__item--top')
+    expect(items[2].classes()).not.toContain('result-ranking__item--top')
+  })
+
+  it('should highlight five items when all tie', () => {
+    const allTied: MinistryScore[] = [
+      { ministry: 'pastor', score: 1 },
+      { ministry: 'mestre', score: 1 },
+      { ministry: 'evangelista', score: 1 },
+      { ministry: 'profeta', score: 1 },
+      { ministry: 'apostolo', score: 1 },
+    ]
+    const wrapper = mount(ResultRanking, {
+      props: { scores: allTied },
+    })
+    const items = wrapper.findAll('.result-ranking__item')
+    for (const item of items) {
+      expect(item.classes()).toContain('result-ranking__item--top')
+    }
   })
 })
