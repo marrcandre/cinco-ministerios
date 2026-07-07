@@ -2,8 +2,6 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { loadSession } from '@/infrastructure/storage/local-storage'
-import PageHeader from '@/components/ui/PageHeader.vue'
-import AppCard from '@/components/ui/AppCard.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 
 const router = useRouter()
@@ -24,14 +22,39 @@ function continueTest() {
 
 <template>
   <div class="home-view">
-    <PageHeader
-      title="Os Cinco Ministérios"
-      description="Descubra seu ministério predominante"
-    />
+    <div class="home-view__hero">
+      <h1 class="home-view__title">Cinco Ministérios</h1>
+      <p class="home-view__subtitle">
+        Descubra quais ministérios de Cristo fluem mais naturalmente através de você.
+      </p>
+    </div>
 
-    <AppCard v-if="hasSession" variant="outlined" padding="lg" class="home-view__resume">
+    <div class="home-view__card">
+      <p class="home-view__description">
+        Responda com sinceridade as 6 perguntas a seguir, deixando vir o primeiro
+        impulso. Não existem respostas certas ou erradas — apenas características
+        que Deus já plantou em você.
+      </p>
+
+      <ul class="home-view__list">
+        <li class="home-view__list-item">
+          Responda sinceramente, sem pensar demais.
+        </li>
+        <li class="home-view__list-item">
+          O resultado mostra tendências e características que podem ser desenvolvidas.
+        </li>
+      </ul>
+
+      <div class="home-view__start">
+        <AppButton variant="primary" size="lg" @click="startNew">
+          Iniciar teste
+        </AppButton>
+      </div>
+    </div>
+
+    <div v-if="hasSession" class="home-view__resume">
       <p class="home-view__resume-text">
-        Você possui um teste em andamento. Deseja continuar ou iniciar um novo?
+        Você possui um teste em andamento.
       </p>
       <div class="home-view__resume-actions">
         <AppButton variant="primary" @click="continueTest">
@@ -41,23 +64,7 @@ function continueTest() {
           Iniciar novo teste
         </AppButton>
       </div>
-    </AppCard>
-
-    <AppCard v-else padding="lg">
-      <p class="home-view__description">
-        Este teste ajudará você a identificar seu ministério predominante com base
-        no modelo dos Cinco Ministérios descritos em Efésios 4:11.
-      </p>
-      <p class="home-view__info">
-        São 6 perguntas com 5 alternativas cada. Ao final, você verá o ranking
-        completo dos ministérios.
-      </p>
-      <div class="home-view__start">
-        <AppButton variant="primary" size="lg" @click="startNew">
-          Iniciar teste
-        </AppButton>
-      </div>
-    </AppCard>
+    </div>
   </div>
 </template>
 
@@ -65,22 +72,72 @@ function continueTest() {
 .home-view {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   padding-bottom: var(--spacing-3xl);
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.home-view__hero {
+  text-align: center;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+}
+
+.home-view__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.home-view__subtitle {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.home-view__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
 }
 
 .home-view__description {
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
-.home-view__info {
+.home-view__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.home-view__list-item {
+  position: relative;
+  padding-left: var(--spacing-lg);
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-lg);
+}
+
+.home-view__list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
 }
 
 .home-view__start {
@@ -88,15 +145,21 @@ function continueTest() {
   justify-content: center;
 }
 
+.home-view__resume {
+  text-align: center;
+  padding: var(--spacing-md) 0;
+}
+
 .home-view__resume-text {
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   line-height: var(--line-height-normal);
 }
 
 .home-view__resume-actions {
   display: flex;
+  justify-content: center;
   gap: var(--spacing-md);
   flex-wrap: wrap;
 }

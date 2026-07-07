@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { MinistryScore } from '@/domain/types'
 import { getMinistry } from '@/domain/ministries'
 import { getTopMinistries } from '@/domain/scoring'
@@ -10,18 +11,29 @@ interface Props {
 const props = defineProps<Props>()
 
 const topMinistries = getTopMinistries(props.scores)
+const hasMultiple = computed(() => topMinistries.length > 1)
 </script>
 
 <template>
   <div class="ministry-highlights">
+    <template v-if="hasMultiple">
+      <p class="ministry-highlights__intro">
+        Seu resultado indica afinidade semelhante com os seguintes ministérios:
+      </p>
+    </template>
+
     <div
       v-for="item in topMinistries"
       :key="item.ministry"
       class="ministry-highlights__card"
     >
-      <span class="ministry-highlights__name">
+      <p v-if="!hasMultiple" class="ministry-highlights__affinity">
+        Você demonstra maior afinidade com o ministério de
+        <strong>{{ getMinistry(item.ministry).name }}</strong>.
+      </p>
+      <p v-else class="ministry-highlights__name">
         {{ getMinistry(item.ministry).name }}
-      </span>
+      </p>
       <p class="ministry-highlights__description">
         {{ getMinistry(item.ministry).description }}
       </p>
@@ -36,6 +48,14 @@ const topMinistries = getTopMinistries(props.scores)
   gap: var(--spacing-md);
 }
 
+.ministry-highlights__intro {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: calc(-1 * var(--spacing-xs));
+}
+
 .ministry-highlights__card {
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
@@ -43,16 +63,23 @@ const topMinistries = getTopMinistries(props.scores)
   border: 1px solid var(--color-border);
 }
 
+.ministry-highlights__affinity {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-xs);
+}
+
 .ministry-highlights__name {
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
   color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
 }
 
 .ministry-highlights__description {
-  margin-top: var(--spacing-xs);
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 </style>

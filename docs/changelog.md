@@ -1,5 +1,27 @@
 # Changelog
 
+## [5.2.0] — 2026-07-07
+
+### Alterado
+
+- MinistryHighlights: novo texto de empate ("Seu resultado indica afinidade semelhante com os seguintes ministérios")
+- MinistryHighlights: nome do ministério em destaque com `font-size-xl` e maior espaçamento
+- ResultView: título da segunda seção alterado para "Conheça seus ministérios em destaque"
+- ministries.ts: descrições expandidas para 91–100 palavras cada, tom pastoral e acolhedor
+
+### Adicionado
+
+- N/A
+
+### Removido
+
+- Texto antigo de empate ("Você demonstra afinidade com mais de um ministério")
+- Subtítulo de empate ("Suas respostas indicam características semelhantes...")
+
+### Sem alteração
+
+- Regras de pontuação, perguntas, gabarito, application, infrastructure, Design System, fluxo do teste
+
 ## [4.2.0] — 2026-07-07
 
 ### Alterado
