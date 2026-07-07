@@ -49,7 +49,37 @@
 - [x] 13 testes de persistência
 - [x] Documentar `docs/infrastructure.md`
 
-## Sprint 4 — Questionário
+## Sprint 4 — Apresentação (concluído)
+
+- [x] Criar composable useTestSession
+- [x] Criar componentes: QuestionCard, QuestionOption, TestProgress, ResultRanking
+- [x] Criar páginas: HomeView, TestView, ResultView
+- [x] Configurar rotas /, /test, /result
+- [x] 15 testes do composable
+- [x] Documentar `docs/presentation.md`
+
+## Sprint 4.1 — Refinamento UX (concluído)
+
+- [x] Feedback visual aprimorado no QuestionOption
+- [x] Auto-advance após seleção
+
+## Sprint 4.2 — Navegação manual (concluído)
+
+- [x] Botão "Anterior" (oculto na primeira pergunta)
+- [x] Botão "Próxima" / "Finalizar" (exige pergunta respondida)
+- [x] `answer()` no composable permite substituir resposta existente
+- [x] Auto-advance continua funcionando; timer cancelado na navegação manual
+- [x] 5 novos testes (113 total, 100% statements)
+- [x] Verificação: lint, typecheck, build
+
+- [x] Criar composable useTestSession
+- [x] Criar componentes: QuestionCard, QuestionOption, TestProgress, ResultRanking
+- [x] Criar páginas: HomeView, TestView, ResultView
+- [x] Configurar rotas /, /test, /result
+- [x] 15 testes do composable
+- [x] Documentar `docs/presentation.md`
+
+## Sprint 5 — Refinamento
 
 - [ ] Criar tela do questionário
 - [ ] Implementar navegação entre perguntas

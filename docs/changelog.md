@@ -1,5 +1,50 @@
 # Changelog
 
+## [4.2.0] — 2026-07-07
+
+### Alterado
+
+- TestView: botões "Anterior" e "Próxima"/"Finalizar" reintroduzidos
+- Anterior: oculto na primeira pergunta, retorna sem perder respostas
+- Próxima: exige pergunta respondida, avança manualmente
+- Finalizar: substitui "Próxima" na última pergunta
+
+### Adicionado
+
+- `answer()` no composable agora permite substituir resposta existente (change answer)
+- Testes: replace answer, go back and change, retain other answers, complete after change
+- Auto-advance timer é cancelado se usuário clicar navegação manual
+
+### Sem alteração
+
+- Domain, application, infrastructure, design system
+
+## [4.1.0] — 2026-07-07
+
+### Alterado
+
+- QuestionOption: estado selecionado com indicador preenchido + ícone check, borda lateral esquerda colorida, fundo mais forte, compatível com dark mode
+- QuestionCard: adicionada prop `disabled` para travar durante transição
+- TestView: removido fluxo com botões "Próxima"/"Anterior"; auto-advance após seleção com feedback visual breve (400ms), complete + navegação na última pergunta (600ms)
+- Testes do composable: 18 testes (novos: auto-advance, complete, persistência pós-complete)
+
+## [4.0.0] — 2026-07-07
+
+### Adicionado
+
+- Camada de apresentação (Vue): páginas, componentes e composable
+- `useTestSession` composable integrando application + infrastructure
+- Componentes: QuestionCard, QuestionOption, TestProgress, ResultRanking
+- Páginas: HomeView, TestView, ResultView
+- Rotas: `/`, `/test`, `/result`
+- 15 testes do composable useTestSession
+- Documento `docs/presentation.md`
+
+### Alterado
+
+- Router atualizado com novas rotas
+- DashboardPage substituído por HomeView como página inicial
+
 ## [3.0.0] — 2026-07-07
 
 ### Adicionado

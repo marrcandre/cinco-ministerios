@@ -3,156 +3,156 @@ import type { Question } from './types'
 export const QUESTIONS: Question[] = [
   {
     id: 1,
-    text: 'Em qual situação você se sente mais realizado?',
+    text: 'O que você gosta de fazer no seu tempo livre?',
     options: [
       {
-        text: 'Estudando e explicando um texto bíblico em profundidade.',
+        text: 'Gosto de ler um bom livro',
         ministry: 'mestre',
       },
       {
-        text: 'Compartilhando sua fé com alguém que não conhece a Deus.',
+        text: 'Gosto de estar com pessoas diferentes',
         ministry: 'evangelista',
       },
       {
-        text: 'Cuidando de pessoas que estão passando por dificuldades.',
+        text: 'Gosto de estar com meus amigos e parentes',
         ministry: 'pastor',
       },
       {
-        text: 'Revelando uma verdade que ninguém havia percebido.',
+        text: 'Gosto de tirar um tempo para contemplar a natureza e/ou ouvir a Deus',
         ministry: 'profeta',
       },
       {
-        text: 'Liderando um novo projeto ou obra do zero.',
+        text: 'Gosto de pensar em novas estratégias',
         ministry: 'apostolo',
       },
     ],
   },
   {
     id: 2,
-    text: 'Como as pessoas geralmente descrevem você?',
+    text: 'Em caso de mudança de cidade, qual sua primeira reação?',
     options: [
       {
-        text: 'Acolhedor e paciente.',
+        text: 'Você fica triste por que você vai estar longe das pessoas que você via sempre',
         ministry: 'pastor',
       },
       {
-        text: 'Visionário e empreendedor.',
+        text: 'Você já começa a pensar em iniciar um GP na cidade em que você está indo',
         ministry: 'apostolo',
       },
       {
-        text: 'Analítico e detalhista.',
+        text: 'Você começa a pesquisar sobre o lugar em que você está se mudando',
         ministry: 'mestre',
       },
       {
-        text: 'Sincero e direto ao ponto.',
+        text: 'Você pergunta para Deus o que ele tem pra esse novo tempo',
         ministry: 'profeta',
       },
       {
-        text: 'Comunicativo e inspirador.',
+        text: 'Você já cria expectativa para as novas pessoas que você vai conhecer',
         ministry: 'evangelista',
       },
     ],
   },
   {
     id: 3,
-    text: 'O que mais motiva você no ministério?',
+    text: 'Seu GP vai multiplicar, quem é você?',
     options: [
       {
-        text: 'Estabelecer novas bases e estruturas.',
+        text: 'A pessoa que está animada pois o reino está crescendo',
         ministry: 'apostolo',
       },
       {
-        text: 'Ver pessoas crescendo em maturidade e fé.',
+        text: 'A pessoa que já está com saudades dos que não vão continuar com você',
         ministry: 'pastor',
       },
       {
-        text: 'Ver almas sendo salvas e vidas transformadas.',
+        text: 'A pessoa que está pensando em que convidados trazer para a festa da multiplicação',
         ministry: 'evangelista',
       },
       {
-        text: 'Ver a verdade sendo restaurada e proclamada.',
+        text: 'A pessoa que pensou que a lembrancinha pode ser uma palavra profética',
         ministry: 'profeta',
       },
       {
-        text: 'Ver pessoas compreendendo bem a Palavra.',
+        text: 'A pessoa que está preocupada se todo GP entendeu a importância da multiplicação',
         ministry: 'mestre',
       },
     ],
   },
   {
     id: 4,
-    text: 'Qual é a sua maior contribuição em uma equipe?',
+    text: 'No dia-a-dia do seu GP, quem é você?',
     options: [
       {
-        text: 'Unidade e harmonia entre os membros.',
+        text: 'Você é a pessoa que se preocupa se todos estão bem e se sentindo parte no GP',
         ministry: 'pastor',
       },
       {
-        text: 'Entusiasmo e capacidade de mobilizar outros.',
+        text: 'É a pessoa que está sempre preocupada em trazer visitantes e receber eles bem',
         ministry: 'evangelista',
       },
       {
-        text: 'Direção estratégica e visão de futuro.',
+        text: 'É a pessoa que está o tempo todo pensando em como manter o foco em Jesus no GP',
         ministry: 'apostolo',
       },
       {
-        text: 'Discernimento e correção de rumo.',
+        text: 'É a pessoa que sempre tenta trazer encorajamento, consolo e edificação para as pessoas do GP',
         ministry: 'profeta',
       },
       {
-        text: 'Fundamento bíblico e clareza doutrinária.',
+        text: 'Ou é a pessoa que está o tempo todo tentando buscar as respostas na palavra de Deus',
         ministry: 'mestre',
       },
     ],
   },
   {
     id: 5,
-    text: 'O que você mais valoriza em um líder?',
+    text: 'Na celebração Siloé, quem é você?',
     options: [
       {
-        text: 'Fé contagiante e paixão pelas almas.',
+        text: 'A pessoa que está preocupada com as pessoas que estão nos visitando em recebê-los bem e se alguém se converte é a primeira a estar ali na frente com a pessoa.',
         ministry: 'evangelista',
       },
       {
-        text: 'Amor genuíno e cuidado com as pessoas.',
+        text: 'A pessoa preocupada se o seu GP está servindo, se todos vieram a celebração e se estão realmente vivendo o que está acontecendo.',
         ministry: 'pastor',
       },
       {
-        text: 'Sabedoria e precisão no ensino.',
+        text: 'A pessoa que está realmente interessada na palavra, anota tudo detalhadamente para depois conferir e colocar em prática.',
         ministry: 'mestre',
       },
       {
-        text: 'Integridade e coragem para falar a verdade.',
+        text: 'A pessoa que vem para ouvir Deus, em tudo, desde a entrada até a saída, que entende a celebração como um encontro com Deus.',
         ministry: 'profeta',
       },
       {
-        text: 'Visão clara e capacidade de executar.',
+        text: 'A pessoa que entra na celebração com uma incomodação santa, pensando em quantas outras pessoas precisavam viver e experimentar o que estamos vivendo, e como você pode fazer parte disso.',
         ministry: 'apostolo',
       },
     ],
   },
   {
     id: 6,
-    text: 'Qual área de serviço mais se alinha com seus dons?',
+    text: 'Se te soltar no meio de um lugar desconhecido lotado, o que você faz?',
     options: [
       {
-        text: 'Discipulado e aconselhamento pastoral.',
+        text: 'Vai procurar um rosto conhecido',
         ministry: 'pastor',
       },
       {
-        text: 'Ensino e preparação de conteúdo teológico.',
+        text: 'Pega seu celular pra se informar onde você está e como sair dali',
         ministry: 'mestre',
       },
       {
-        text: 'Evangelismo e missões transculturais.',
+        text: 'Vai pedir informação para qualquer pessoa',
         ministry: 'evangelista',
       },
       {
-        text: 'Ministério profético e vida de oração.',
+        text: 'Vai orar pedindo ajuda para Deus',
         ministry: 'profeta',
       },
       {
-        text: 'Plantar igrejas ou iniciar novos ministérios.',
+        text: 'Vai pensar como você pode começar um movimento de Deus naquele lugar',
         ministry: 'apostolo',
       },
     ],
