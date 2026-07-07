@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.0.0] — 2026-07-07
+
+### Adicionado
+
+- Camada de infraestrutura (`src/infrastructure/storage/`)
+- `localStorage` adapter: `saveSession`, `loadSession`, `clearSession`, `saveResult`, `loadResult`, `clearResult`, `clearAll`
+- 13 testes de infraestrutura (persistência, limpeza, dados inválidos, JSON malformado)
+- Documento `docs/infrastructure.md`
+
 ## [2.0.0] — 2026-07-07
 
 ### Adicionado

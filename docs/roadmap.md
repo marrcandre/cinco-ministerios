@@ -43,7 +43,13 @@
 - [x] 20 testes de aplicação
 - [x] Documentar `docs/application.md`
 
-## Sprint 3 — Questionário
+## Sprint 3 — Infraestrutura (concluído)
+
+- [x] Criar adapter localStorage para sessão e resultado
+- [x] 13 testes de persistência
+- [x] Documentar `docs/infrastructure.md`
+
+## Sprint 4 — Questionário
 
 - [ ] Criar tela do questionário
 - [ ] Implementar navegação entre perguntas
