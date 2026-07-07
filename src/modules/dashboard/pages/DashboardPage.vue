@@ -7,7 +7,7 @@ import EmptyState from '@/components/ui/EmptyState.vue'
 <template>
   <div>
     <PageHeader
-      title="Cinco Ministérios"
+      title="Os Cinco Ministérios"
       description="Teste de Identificação dos Cinco Ministérios"
     />
 

@@ -25,7 +25,7 @@ function continueTest() {
 <template>
   <div class="home-view">
     <PageHeader
-      title="Cinco Ministérios"
+      title="Os Cinco Ministérios"
       description="Descubra seu ministério predominante"
     />
 

@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import { loadResult } from '@/infrastructure/storage/local-storage'
 import PageHeader from '@/components/ui/PageHeader.vue'
 import ResultRanking from '@/components/test/ResultRanking.vue'
+import MinistryHighlights from '@/components/result/MinistryHighlights.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 import EmptyState from '@/components/ui/EmptyState.vue'
 import type { TestResult } from '@/application/calculate-result'
@@ -41,7 +42,14 @@ function restart() {
     </EmptyState>
 
     <template v-else>
-      <ResultRanking :scores="result.scores" />
+      <section class="result-view__section">
+        <ResultRanking :scores="result.scores" />
+      </section>
+
+      <section class="result-view__section">
+        <h2 class="result-view__section-title">Seus ministérios em destaque</h2>
+        <MinistryHighlights :scores="result.scores" />
+      </section>
 
       <div class="result-view__actions">
         <AppButton variant="outline" @click="restart">
@@ -56,8 +64,21 @@ function restart() {
 .result-view {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   padding-bottom: var(--spacing-3xl);
+}
+
+.result-view__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.result-view__section-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
 }
 
 .result-view__actions {
