@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Coverage
+coverage/
+
+# Build
+dist/
+
+# Dependencies
+node_modules/
