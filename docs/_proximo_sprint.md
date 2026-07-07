@@ -1,47 +1,125 @@
-### Próximo Sprint — Sprint 6: Publicação (v1.0.0)
+Estamos fazendo ajustes finais do Sprint 6.3 antes da release v1.0.0.
 
-**Objetivo:** preparar a aplicação para publicação definitiva, sem alterar regras de negócio nem a arquitetura.
+Objetivo:
+Refinar a apresentação institucional sem alterar arquitetura ou regras de negócio.
 
-Escopo previsto:
+IMPORTANTE:
+- Não criar novas funcionalidades.
+- Não alterar fluxo do teste.
+- Manter Design System existente.
 
-* ✅ Identidade visual
+## 1. Remover logo da Home
 
-  * Favicon (`favicon.ico` e `favicon.svg`)
-  * Logo do projeto
-  * Ícone para dispositivos móveis (`apple-touch-icon`)
+Atualizar:
 
-* ✅ Metadados
+src/views/HomeView.vue
 
-  * Título da página
-  * Meta description
-  * `theme-color`
-  * Open Graph
-  * Twitter Card
+Remover o AppLogo adicionado no hero.
 
-* ✅ PWA básico
+Motivo:
+A Home deve priorizar:
+- apresentação do teste;
+- chamada principal;
+- início da experiência.
 
-  * `site.webmanifest`
-  * Ícones do manifest
+Manter o logo:
+- Header;
+- Página Sobre.
 
-* ✅ SEO
+---
 
-  * `robots.txt`
-  * `sitemap.xml`
+## 2. Completar projetos relacionados
 
-* ✅ Experiência de navegação
+Atualizar:
 
-  * Página 404 personalizada
+src/views/AboutView.vue
 
-* ✅ Rodapé institucional
+Na seção de projetos adicionar:
 
-  * Sobre o projeto
-  * Autor (Marco André Mendes)
-  * Contato
-  * Lista de outros projetos
-  * Área "Apoie este projeto" (PIX)
+### Cinco Ministérios
 
-* ✅ Revisão final para publicação
+Descrição:
+Ferramenta de reflexão baseada em Efésios 4:11 para descoberta de perfil ministerial.
 
-  * Conferência de favicon, compartilhamento em redes sociais, indexação e aparência geral.
+Links:
+- Aplicação:
+https://cinco-ministerios.vercel.app/
+- Código fonte:
+https://github.com/marrcandre/cinco-ministerios
 
-Como esse será o sprint de preparação para a versão pública, também faz sentido encerrá-lo com a **tag `v1.0.0`** no Git e uma release correspondente no GitHub. Isso marca oficialmente a primeira versão estável do projeto.
+### Dons Espirituais
+
+Descrição:
+Ferramenta de reflexão sobre dons espirituais.
+
+Links:
+- Aplicação:
+https://dons-espirituais.vercel.app
+- Código fonte:
+https://github.com/marrcandre/dons-espirituais
+
+Utilizar componentes de link existentes ou padrão visual da aplicação.
+
+---
+
+## 3. Tornar contatos clicáveis
+
+Na seção Autor:
+
+Transformar em links:
+
+GitHub:
+https://github.com/marrcandre
+
+LinkedIn:
+https://www.linkedin.com/in/marrcandre/
+
+Email:
+mailto:marcoandre@gmail.com
+
+Para links externos:
+- target="_blank"
+- rel="noopener noreferrer"
+
+---
+
+## 4. Revisar visual
+
+Verificar:
+
+- Sobre;
+- Footer;
+- Header;
+- Home.
+
+Garantir:
+- sem elementos sobrando;
+- espaçamento consistente;
+- links com aparência adequada.
+
+---
+
+## 5. Documentação
+
+Atualizar:
+
+docs/sprint-6-publicacao.md
+
+Registrar esses ajustes finais do Sprint 6.3.
+
+---
+
+## 6. Validação
+
+Executar:
+
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+
+Apresentar:
+- resumo;
+- arquivos alterados;
+- testes;
+- commit sugerido.

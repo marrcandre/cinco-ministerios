@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppHeader from '@/components/ui/AppHeader.vue'
+import AppFooter from '@/components/ui/AppFooter.vue'
 import AppContainer from '@/components/ui/AppContainer.vue'
 </script>
 
@@ -11,5 +12,6 @@ import AppContainer from '@/components/ui/AppContainer.vue'
         <router-view />
       </AppContainer>
     </v-main>
+    <AppFooter />
   </v-app>
 </template>
