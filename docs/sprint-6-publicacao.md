@@ -267,7 +267,62 @@ A identidade visual foi unificada com a paleta oficial:
 
 **Decisão do modo escuro**: No dark mode, o verde primário foi mantido como `#2D8A5A` (mais claro que o `#1a4d2e` do light mode) por questões de contraste e legibilidade sobre fundo `#121212`. O dourado secundário foi mantido como `#d4a843` / `#d4a82e`, que possuem boa visibilidade tanto em light quanto em dark.
 
+---
+
+## Sprint 6.2 — PWA e SEO (concluído)
+
+### Status: ✅ Concluído
+
+### Arquivos criados
+
+| Arquivo | Descrição |
+|---|---|
+| `public/site.webmanifest` | Manifest PWA com nome, ícones 192×192 e 512×512, cores e display standalone |
+| `public/icon-192.png` | Ícone PWA 192×192 a partir do favicon.svg |
+| `public/icon-512.png` | Ícone PWA 512×512 a partir do favicon.svg |
+| `public/robots.txt` | Permite indexação total, aponta sitemap |
+| `public/sitemap.xml` | Lista as 3 páginas públicas: `/`, `/test`, `/result` |
+
+### Arquivos alterados
+
+| Arquivo | Ação |
+|---|---|
+| `index.html` | Adicionado `<link rel="manifest" href="/site.webmanifest">` |
+
+### Decisões tomadas
+
+**PWA**
+- **Display**: `standalone` — oferece experiência imersiva sem barra de navegador.
+- **Background/theme color**: `#1a4d2e` (verde escuro oficial) — consistente com a identidade visual.
+- **Icons**: gerados do favicon.svg oficial (cruz + 5 pontos, verde escuro + dourado).
+- **Purpose**: `any maskable` — permite que o navegador recorte o ícone para adaptá-lo a diferentes formatos de dispositivo.
+
+**SEO**
+- **robots.txt**: permite todas as rotas públicas. Sitemap aponta para `https://cinco-ministerios.vercel.app/sitemap.xml`.
+- **sitemap.xml**: inclui apenas `/`, `/test`, `/result`. A página 404 (quando criada) não deve ser incluída.
+- **URL**: mantido `https://cinco-ministerios.vercel.app` como placeholder. Deve ser atualizado quando o domínio definitivo for definido.
+
+### Validações
+
+| Comando | Resultado |
+|---|---|
+| `npm run lint` | ✅ Sem erros |
+| `npm run typecheck` | ✅ Sem erros |
+| `npm run test` | ✅ 134 testes, 12 arquivos, todos verdes |
+| `npm run build` | ✅ Build bem-sucedido |
+
+### Observações
+
+- Nenhuma regra de negócio alterada.
+- Nenhum componente Vue foi modificado.
+- O sitemap e robots.txt usam URL provisória (`vercel.app`) — atualizar no deploy.
+
 ### Pendências futuras
 
-- [ ] Atualizar og:url após definição do domínio definitivo.
 - [ ] Validar compartilhamento real em redes sociais após publicação.
+
+- [] Quando houver domínio definitivo:
+  - atualizar sitemap.xml;
+  - atualizar robots.txt se necessário;
+  - atualizar og:url;
+  - revisar URLs do manifest.
