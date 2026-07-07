@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.0] — 2026-07-07
+
+### Adicionado
+
+- Camada de aplicação (`src/application/`)
+- `TestSession`: criação, respostas com validação, verificação de conclusão
+- `calculateResult()`: caso de uso que invoca o domínio para pontuação
+- 20 testes de aplicação (test-session + calculate-result)
+- Documento `docs/application.md`
+
+### Alterado
+
+- Roadmap atualizado com Sprint 2
+
 ## [1.2.0] — 2026-07-07
 
 ### Alterado

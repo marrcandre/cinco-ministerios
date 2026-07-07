@@ -35,9 +35,15 @@
 
 - [x] Remover campo redundante `slug` do domínio
 - [x] Criar testes para `getMinistry`
-- [x] 57 testes totais
 
-## Sprint 2 — Questionário
+## Sprint 2 — Application Layer (concluído)
+
+- [x] Criar `TestSession` com criação, validação e conclusão
+- [x] Criar `calculateResult` como caso de uso
+- [x] 20 testes de aplicação
+- [x] Documentar `docs/application.md`
+
+## Sprint 3 — Questionário
 
 - [ ] Criar tela do questionário
 - [ ] Implementar navegação entre perguntas
