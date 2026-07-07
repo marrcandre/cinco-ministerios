@@ -17,7 +17,7 @@ function toggleTheme() {
 <template>
   <header class="app-header">
     <div class="app-header__inner">
-      <span class="app-header__brand">Os Cinco Ministérios</span>
+      <span class="app-header__brand">Cinco Ministérios</span>
 
       <button class="app-header__toggle" :title="`Modo ${nextTheme}`" @click="toggleTheme">
         <v-icon

@@ -12,8 +12,8 @@ export default createVuetify({
       cincoMinisteriosLight: {
         dark: false,
         colors: {
-          primary: '#1B5438',
-          secondary: '#C8A220',
+          primary: '#1A4D2E',
+          secondary: '#D4A843',
           background: '#F8F8F5',
           surface: '#FFFFFF',
           error: '#D32F2F',

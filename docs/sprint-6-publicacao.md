@@ -204,26 +204,35 @@ Para preservar o foco da publicação, não serão implementados:
 
 ## Sprint 6.1 — Identidade Visual e Metadados (concluído)
 
-### Status: ✅ Concluído
+### Status: ✅ Concluído (com alteração de identidade visual)
 
 ### Arquivos alterados
 
 | Arquivo | Ação | Descrição |
 |---|---|---|
-| `index.html` | Alterado | Título, meta description, theme-color, OG, Twitter Card, apple-touch-icon, favicon.ico |
-| `public/favicon.ico` | Criado | Ícone 32×32 gerado a partir do favicon.svg |
-| `public/apple-touch-icon.png` | Criado | Ícone 180×180 gerado a partir do favicon.svg |
-| `public/og-image.png` | Criado | Imagem Open Graph 1200×630 com fundo gradiente roxo + símbolo + texto |
-| `docs/sprint-6-publicacao.md` | Alterado | Adicionado registro do Sprint 6.1 |
+| `public/favicon.svg` | Substituído | Novo design: cruz central + 5 pontos (pentágono) em verde escuro (#1a4d2e) e dourado (#d4a843) |
+| `public/favicon.ico` | Regenerado | 32×32 a partir do novo favicon.svg |
+| `public/apple-touch-icon.png` | Regenerado | 180×180 a partir do novo favicon.svg |
+| `public/og-image.png` | Substituído | 1200×630 com gradiente verde escuro + símbolo dourado |
+| `index.html` | Alterado | theme-color atualizado para #1a4d2e |
+| `src/styles/tokens/colors.css` | Alterado | Paleta padronizada: primary → #1a4d2e, secondary → #d4a843 |
+| `src/styles/theme/vuetify.ts` | Alterado | Tema light alinhado: primary → #1A4D2E, secondary → #D4A843 |
+| `src/components/ui/AppHeader.vue` | Alterado | Texto "Os Cinco Ministérios" → "Cinco Ministérios" |
+| `docs/sprint-6-publicacao.md` | Alterado | Registro atualizado |
 
 ### Decisões tomadas
 
-- **Título**: "Cinco Ministérios — Descubra seu perfil ministerial" (removido artigo "Os" para versão mais direta e SEO-friendly).
-- **Meta description**: texto descritivo de ~155 caracteres mencionando Efésios 4:11 e os 5 ministérios.
-- **Theme-color**: `#7c3aed` (roxo), mesma família do favicon.
-- **OG image**: gerada com gradiente roxo (mesma paleta do favicon), símbolo centralizado e texto "Cinco Ministérios" + subtítulo "Descubra seu perfil ministerial".
+**Identidade visual**
+- **Símbolo**: cruz central representando Cristo + 5 pontos dourados em formação de pentágono, simbolizando os 5 ministérios (Efésios 4:11) ao redor da cruz. O design também evoca os 5 estigmas de Cristo, adicionando profundidade teológica.
+- **Paleta**: verde escuro (#1a4d2e) como cor principal + dourado (#d4a843) como cor de destaque. Verde remete a crescimento, vida, esperança; dourado remete a realeza, valor, divindade.
+- **Estilo**: minimalista, geométrico, circular (badge), legível em qualquer tamanho.
+- **Tamanho do SVG**: 477 bytes (drasticamente menor que o anterior de 9.3 KB).
+
+**Metadados**
+- **Título**: "Cinco Ministérios — Descubra seu perfil ministerial".
+- **Meta description**: ~155 caracteres, menciona Efésios 4:11 e os 5 ministérios.
+- **Theme-color**: `#1a4d2e` (verde escuro), alinhado com a nova paleta.
 - **OG/Twitter URL**: `https://cinco-ministerios.vercel.app` (placeholder — atualizar após deploy).
-- **Favicon**: mantido o SVG original como primário; adicionado `.ico` como fallback para browsers legacy.
 - **Fonte da OG image**: Liberation Sans (Bold para título, Regular para subtítulo).
 
 ### Validações
@@ -238,10 +247,25 @@ Para preservar o foco da publicação, não serão implementados:
 ### Observações
 
 - Nenhuma regra de negócio foi alterada.
-- Nenhum componente Vue foi modificado.
 - A URL de produção (`og:url`, `twitter:image`) está como placeholder e deve ser atualizada no deploy real.
-- O tamanho do favicon.ico (4.2 KB) e apple-touch-icon (20 KB) estão adequados.
-- A imagem OG tem 228 KB — idealmente poderia ser otimizada, mas está dentro do aceitável para redes sociais.
+- A imagem OG foi reduzida de 228 KB para 168 KB com o novo design.
+
+### Padronização concluída
+
+A identidade visual foi unificada com a paleta oficial:
+
+| Elemento | Cor | Código |
+|---|---|---|
+| `favicon.svg` | Verde escuro + Dourado | #1a4d2e / #d4a843 |
+| `og-image.png` | Verde escuro + Dourado | #1a4d2e / #d4a843 |
+| `index.html` (theme-color) | Verde escuro | #1a4d2e |
+| Tokens CSS (light) | Verde escuro + Dourado + hovers | #1a4d2e / #143d24 / #d4a843 / #c49436 |
+| Tokens CSS (dark) | Verde claro + Dourado (visibilidade em fundo escuro) | #2d8a5a / #36a36c / #d4a843 / #e0b83a |
+| Tema Vuetify (light) | Verde escuro + Dourado | #1A4D2E / #D4A843 |
+| Tema Vuetify (dark) | Verde claro + Dourado (visibilidade em fundo escuro) | #2D8A5A / #D4A82E |
+| AppHeader | Texto "Cinco Ministérios" + cor primary | `var(--color-primary)` |
+
+**Decisão do modo escuro**: No dark mode, o verde primário foi mantido como `#2D8A5A` (mais claro que o `#1a4d2e` do light mode) por questões de contraste e legibilidade sobre fundo `#121212`. O dourado secundário foi mantido como `#d4a843` / `#d4a82e`, que possuem boa visibilidade tanto em light quanto em dark.
 
 ### Pendências futuras
 
