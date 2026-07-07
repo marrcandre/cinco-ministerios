@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.2.0] — 2026-07-07
+
+### Alterado
+
+- Removido campo redundante `slug` da interface `MinistryInfo` e dos dados dos ministérios
+
+### Adicionado
+
+- `src/tests/domain/ministries.spec.ts` com 8 testes para `getMinistry` (existente, inexistente, erro, slug ausente)
+
+## [1.1.0] — 2026-07-07
+
+### Alterado
+
+- Corrigido mapeamento de ministérios nas alternativas para seguir o gabarito oficial
+- Testes expandidos para 49 (40 questions + 8 scoring + 1 placeholder)
+- Adicionada validação completa do gabarito nos testes (cada posição de cada pergunta)
+
+### Documentado
+
+- `docs/domain.md`: adicionada seção "Gabarito Oficial" com tabela de mapeamento
+- Explicitado que o conteúdo textual das perguntas é dado oficial imutável
+
+## [1.0.0] — 2026-07-07
+
+### Adicionado
+
+- Domínio puro do teste dos Cinco Ministérios em `src/domain/`
+- Tipos: Ministry, Question, Option, Answer, MinistryScore
+- Dados dos 5 ministérios (apóstolo, profeta, evangelista, pastor, mestre)
+- 6 perguntas reais com 5 alternativas cada (uma por ministério)
+- Sistema de pontuação (`calculateScores`, `getTopMinistries`)
+- 38 testes de domínio (questions.spec.ts + scoring.spec.ts)
+- Documento `docs/domain.md`
+
 ## [0.2.0] — 2026-07-07
 
 ### Adicionado

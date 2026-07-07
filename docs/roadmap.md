@@ -18,22 +18,39 @@
 - [x] Definir princípios de UX
 - [x] Criar documento philosophy.md
 
-## Sprint 1 — Questionário
+## Sprint 1 — Domínio
 
-- [ ] Implementar domínio das perguntas e respostas
+- [x] Implementar domínio das perguntas e respostas
+- [x] Implementar sistema de pontuação
+- [x] 49 testes de domínio
+- [x] Documentar domínio em docs/domain.md
+
+## Sprint 1.1 — Correção do Domínio (concluído)
+
+- [x] Corrigir mapeamento de alternativas conforme gabarito oficial
+- [x] Adicionar validação completa do gabarito nos testes
+- [x] Documentar gabarito oficial em docs/domain.md
+
+## Sprint 1.2 — Refinamento do Domínio (concluído)
+
+- [x] Remover campo redundante `slug` do domínio
+- [x] Criar testes para `getMinistry`
+- [x] 57 testes totais
+
+## Sprint 2 — Questionário
+
 - [ ] Criar tela do questionário
 - [ ] Implementar navegação entre perguntas
 - [ ] Persistência local das respostas
 
-## Sprint 2 — Resultados
+## Sprint 3 — Resultados
 
 - [ ] Implementar cálculo dos resultados
 - [ ] Criar tela de resultados
 - [ ] Criar tela de perfil individual por ministério
 
-## Sprint 3 — Refinamento
+## Sprint 4 — Refinamento
 
-- [ ] Testes de domínio
 - [ ] Responsividade
 - [ ] Acessibilidade
 - [ ] Deploy na Vercel
