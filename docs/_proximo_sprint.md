@@ -131,3 +131,6 @@ O Sprint 6.4 será considerado concluído quando:
 * testes aprovados;
 * versão marcada como `v1.0.0`;
 * release publicada no GitHub.
+
+
+@Juinhancemendes12
